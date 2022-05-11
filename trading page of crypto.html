@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #buy-sell-button{color: white; background-color: #0052ff;border-radius: 6px;border: transparent solid 0px;font-size: 20px;padding: 10px 20px; cursor: pointer;position: fixed;top: 17px;right: 244px;}
+        #buy-sell-button:hover{background-color: rgb(38, 0, 255);}
+    
+        #send-rec-button{color: rgb(0, 0, 0); background-color: #ffffff;border-radius: 6px;border: #dedfe2 solid 1.5px;font-size: 20px;padding: 10px 20px; cursor: pointer;position: fixed;right: 67px;top: 16px;}
+        #send-rec-button:hover{background-color: rgb(255, 255, 255); }
+        #header-of-pay-sec img{padding-left: 10px;border-radius: 50%;}
+        #header-of-pay-sec{position: fixed;width: 100%;padding-top: 66px;margin-top: -7px; background-color: white;z-index: 3;top:0%;left: 0%;}
+        #aside-of-pay-sec{width: 55px; display: flex; flex-direction: column; border-right: 1.7px solid #0052ff; height: 100%;padding-right: 6px;z-index: 252; background-color: white; position: fixed;top: 0%;left: 0%;}
+        #aside-pay-sec-div1{z-index: 2;background-color: white;}
+        #aside-of-pay-sec div div img{width: 73%; height: 29px; padding-top: 72px; padding-left:7px ;}
+    body{background-color: #f7f9fd;}
+        #pay-sec{padding-top: 84px;padding-left: 152px;display: none;}
+        #pay-sec:target{display: block; }
+        #pay-sec-div1{background-color: white;  width: 600px;border-radius: 10px;display: inline-block;}
+        #pay-sec table tr td p{text-align: center;}
+        #sendingrupees{font-size: 30px;border: #dedfe2 solid 1px; width: 90%;border-radius: 6px;}
+        #rupees-sign{display: inline-block;margin-left: 15px;margin-top: 15px;position: relative;bottom: 12px;font-size: x-large;}
+   /*to none the up and down arrows in number input box */
+  /*to none the border come after click  on number input box */
+        #send-to{border: transparent solid 0px;}
+        #note{border: transparent solid 0px; }
+        #send-recieve-table1 tr td{width:300px;border-top-left-radius: 6px;border-top-right-radius: 6px;}
+        #send-recieve-table1{margin-bottom: 30px;}
+        #wallet-balance-in-pay-sec{display: inline;color: red;}
+        #wallet-balance-in-pay-sec-line{display: inline-block; color: #8d8d8d;margin-left: 201px;}
+        #in-your-wallet-line{display: inline;color: #8d8d8d;}
+        #pay-sec-table-2 td{line-height: 36px;}
+        #pay-sec-table-2{margin-left: 51px;border: solid #dedfe2 1px;border-radius: 6px;}
+        #pay-asset-selector{margin-left: 81px;}
+        #image-of-email-address{ margin-left: 90px;margin-right: 12px;}
+        #pen-image{margin-left: 77px; margin-right: 14px;}
+        #send-td-part{border-top: blue solid 1px;}
+        #receive-td-part{border: solid 1px #dedfe2 ;}
+        #send-buttton{width: 430px;margin-left: 80px;margin-bottom: 29px;margin-top: 30px;padding-bottom: 13px;padding-top: 13px;font-size: 18px;color: white;background-color: #0052ff;border: transparent solid 0px;border-radius: 6px;}
+        #pay-sec-div3{background-color: white;  width: 60px;border-radius: 10px;display: inline-block;position: relative;bottom: 215px;left: 59px;width: 34%;height: 259PX;}
+        #pay-sec-div3-h1{display: inline-block;margin-bottom: 3PX;}
+        #pay-sec-div3-P{margin-top: 0PX; color: #00000085;margin-bottom: 0PX; padding-bottom: 15PX;border-bottom: 1PX SOLID;}
+        
+      /*CREATE ACCOUNT PAGE CSS*/  #POP-UP-CREATE-ACCOUNT{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        display: none;
+        background-color: #d3d3d3b0;
+        top: 0%;
+        position: fixed;
+        font-family: sans-serif;
+        z-index: 1;
+    }
+    #POP-UP-CREATE-ACCOUNT:target{display: block;}
+
+    #mid-of-pop-up{
+        background-color: white;
+        height: auto;
+        width: 12PX;
+        width: 50%;
+        min-width: 446px;
+        max-width: 446PX;
+        MARGIN: auto;
+        POSITION: relative;
+        TOP: 11%;
+        border-radius: 6px;
+    }
+    #pop-up-content{
+        margin-left: 10px;
+    }
+    #mid-of-pop-up p{           
+        margin-top: 6px;
+        margin-bottom: 6px;
+        
+    }
+    #mid-of-pop-up input{
+        padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    font-size: inherit;
+    border:#c1c2bc solid 1px;
+    border-radius: 6px;
+    }
+    
+    #pop-up-close-button p:hover{
+color: black;
+    }
+    #asset-section{display: none;}
+    #asset-section:target{display: block; }
+    #header-of-asset-sec img{padding-left: 10px;border-radius: 50%;}
+    
+    #header-of-asset-sec{position: fixed;width: 100%;padding-top: 66px;margin-top: -7px; background-color: white;z-index: 3;top:0%;left: 0%;}
+    #aside-of-asset-sec{width: 55px; display: flex; flex-direction: column; border-right: 1.7px solid #0052ff; height: 100%;padding-right: 6px;z-index: 252; background-color: white; position: fixed;top: 0%;left: 0%;}
+    #aside-asset-sec-div1{z-index: 2;background-color: white;}
+    #aside-of-asset-sec div div img{width: 73%; height: 29px; padding-top: 72px; padding-left:7px ;}
+    #learn-section{display: none;width: 632px;margin-top: 92px; margin-left: 123px;}
+    #learn-section:target{display: block; }
+    #header-of-learn-sec img{padding-left: 10px;border-radius: 50%;}
+    
+    #header-of-learn-sec{position: fixed;width: 100%;padding-top: 66px;margin-top: -7px; background-color: white;z-index: 3;top:0%;left: 0%;}
+    #aside-of-learn-sec{width: 55px; display: flex; flex-direction: column; border-right: 1.7px solid #0052ff; height: 100%;padding-right: 6px;z-index: 252; background-color: white; position: fixed;top: 0%;left: 0%;}
+    #aside-learn-sec-div1{z-index: 2;background-color: white;}
+    #aside-of-learn-sec div div img{width: 73%; height: 29px; padding-top: 72px; padding-left:7px ;}
+   #learn-div-style img{width: 632px;height: 293px; border-radius:6px;}
+   #learn-div-style{display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;}
+
+    #learn-aside-sec{
+        width: 25.61%;
+    position: fixed;
+    display: inline-block;
+    top: 103px;
+    right: 1%;
+    vertical-align: top;
+        }
+        #aside-sec DIV{
+            margin: 10PX 0PX 10PX 10PX;
+        }
+        a{text-decoration: none;color: unset;}
+        #get-reday-for-trade{border: #dedfe2 solid 1px;margin-left: 128px;width: 67%;border-radius: 10px;margin-top: 50px;}
+        #add-payment-button{color: white; background-color: #0052ff;border-radius: 6px;border: transparent solid 0px;font-size: 20px;padding: 10px 20px;margin-left: 33%;margin-bottom: 26px; }
+        #price-sec-trade-page{display: none;}
+        #price-sec-trade-page:target{display: block;}
+        #table-price-1{
+        margin-top: 5   0px; 
+        margin-left: 60PX; 
+        border:1px #7274794b solid; 
+        border-radius:10px; 
+        font-size: 16px; 
+        font-family:sans-serif; 
+        padding-bottom: 14px; 
+        padding-top: 14px;
+        }
+        tr:hover{background-color: #82899e0e;}
+        td{padding-top: 14px; padding-bottom: 14px; padding-left: 1%;}
+        .price-table-above{
+            display: flex;
+            justify-content: space-around;
+            font-family: sans-serif;
+            margin-top: 30px;
+        }
+        .price-table-above1{
+            border: 1px #7274794b solid;
+            border-radius: 10px;
+            width: 217px;
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+        .price-table-above2{
+          font-size: 14px;
+          width: 217px;
+            border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .price-table-above3{
+          font-size: 14px;
+          width: 217px;
+            border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .price-table-above4{
+          font-size: 14px;
+          width: 217px;  
+          border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .sparkline {
+            transform: scale(3);
+            display: inline-block;
+            height: 1em;
+            margin: 0 0.5em;
+            margin: 0.5px;
+        }
+
+        .sparkline .index {
+            position: relative;
+            float: left; 
+            width: 2px; 
+            height: 1em; 
+        }
+
+        .sparkline .index .count { 
+            display: block; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 0; 
+            background: #AAA;
+            font: 0/0 a;
+            text-shadow: none;
+            color: transparent;
+        }
+        .buy-button-1-design{
+            position: relative;
+            width: auto;
+            margin: 0px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 11px 26px;
+            font-size: 14px;
+            line-height: 14px;
+            border: 1px solid green;
+            background-color:green;
+        } 
+        .buy-button-1{
+            text-decoration: none;
+            color:white;
+        }
+    </style>
+
+   
+</head>
+<body>
+    <main>
+        <a href="#POP-UP-CREATE-ACCOUNT">  <div  id="container" >    <p>  &nbsp; </p></div></a>
+
+        <section id="create-account-sec"><DIV id="POP-UP-CREATE-ACCOUNT"><div id="mid-of-pop-up"><p style="font-size: 27PX; FONT-WEIGHT: 600;display: inline-block; margin-top: 7px;margin-bottom: 7px;margin-left: 88px;">Create Account  </p> <a href="#" id="pop-up-close-button" style="color: #626874f2; text-decoration: none;"><p style=" float: right; margin-top: 8px;margin-bottom: 0px;margin-right: 14px;    FONT-SIZE: x-large;">X</p></a><hr><div  id="pop-up-content"> <form method="get" action="#asset-section" ><table><tr><td><P><b>First name*</b></P></td><td> <P><b>Last name*</b></P></td></tr><tr><td><input type="text" placeholder="First Name " required id="First-Name"></td> <td><input type="text" placeholder="Last Name " required id="Last-Name"></td></tr></table><P><b>Email*</b></P><input type="email" placeholder="email " size="47px" required ><P><b>Password*</b></P><input type="password" placeholder="Password" size="47px" required><DIV style="display: flex;margin-top: 14px;"><input type="checkbox" required style="height: 20PX;width: 20PX;margin-top: 11px;"><p style="display: inline-block; width:93% ;margin-left: 10px;font-size: smaller;">I certify that I am 18 years of age or older, and agree to the User Agreement and Privacy Policy.</p></DIV></div><button type="submit"  size="47px" style="color: white; background-color: #0052ff; border: transparent; border-radius: 6PX;padding-top: 10px;padding-bottom: 10px;padding-left: 8px;font-size: large;width: 377px;margin-left: 30px;margin-top: 12px;margin-bottom: 12PX; line-height: 36px;" onclick="displayname()">Create Account</button><P ALIGN="CENTER" style="font-size: smaller;padding-bottom: 16px;"><a href="#" style="text-decoration: none; color: blue;">Sign in</a> to your Trading Platform account</P></div></form></section>
+     
+        <section id="asset-section">
+            <header align="right" id="header-of-asset-sec"><a href="#trade-sec"><button id="buy-sell-button" >Buy/Sell</button></a><a href="#pay-sec" ><button id="send-rec-button" >Send/Receive</button></a><div style="border: #dedfe2 2px solid;border-top: 0px;border-bottom: 0px;border-right:0px ;display: inline-block;position: fixed;top: 17px;right: 5px;"> <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="" style="height: 37px; width: 37px;"></div><hr style="background-color:#0052ff ;border:#0052ff solid  0.1px; margin-bottom: 0px;"></header>
+            <aside id="aside-of-asset-sec"><div id="aside-pay-sec-div1"> <img src="./final logo.png" alt="" style="height: 61px; width:100%;"> <div id="assetimg"><img src="./asset logoafter.png" alt="" id="" ></div><div id="tradeimg"><a href="#price-sec-trade-page"><img src="./graph logo.png" alt="" id=""></a></div><div id="payimg"><a href="#pay-sec"><img src="./pay logo.png" alt="" id=""></a></div><a href="#learn-section"><div id="learnimg"><img src="./block sec.png" alt="" id=""></div></a></div></div></aside>
+            
+                <div><img src="./asset section.png" alt="" height="67%" width="67%" style="margin-left: 127px;margin-top: 68px;border-radius: 15px;"></div>
+                 <div id="get-reday-for-trade"><img src="./get ready for trade .png" alt="" height="27px" width="44px" style="margin-left: 40px;"><div style="display: inline-block;margin-left: 40px;margin-top: 34px;margin-right: 10px;margin-bottom: 0px;"><span style="font-size: x-large;"><b>Add a payment method<br></b></span><span>Get ready for trade </span></div><button type="button" id="add-payment-button" onclick="addmoney()">add payment </button></button></div>
+        </section>
+
+        <section id="pay-sec">
+            <header align="right" id="header-of-pay-sec"><a href="#trade-sec"><button id="buy-sell-button" >Buy/Sell</button></a><a href="#pay-sec" ><button id="send-rec-button" >Send/Receive</button></a><div style="border: #dedfe2 2px solid;border-top: 0px;border-bottom: 0px;border-right:0px ;display: inline-block;position: fixed;top: 17px;right: 9px;"> <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="" style="height: 37px; width: 37px;"></div><hr style="background-color:#0052ff ;border:#0052ff solid  0.1px; margin-bottom: 0px;"></header>
+            <aside id="aside-of-pay-sec"><div id="aside-pay-sec-div1"> <img src="./final logo.png" alt="" style="height: 61px; width:100%;"> <div id="assetimg"><a href="#asset-section"><img src="./asset logo.png" alt="" id="" ></a></div><div id="tradeimg"><a href="#price-sec-trade-page"><img src="./graph logo.png" alt="" id=""></a></div><div id="payimg"><img src="./pay logobefore.png" alt="" id=""></div><div id="learnimg"><a href="#learn-section"><img src="./block sec.png" alt="" id=""></a></div></div></aside>
+            <div id="pay-sec-div1" ><table id="send-recieve-table1" ><tr><td id="send-td-part"><p >send</p></td><td id="receive-td-part"><p>receive</p></td></tr></table><P id="rupees-sign">&#x20b9;</P><input type="text" placeholder="0" id="sendingrupees" ><table id="pay-sec-table-2"><tr><P id="wallet-balance-in-pay-sec-line">you have<span style="color: blue;"> &#x20b9</span></P><div id="wallet-balance-in-pay-sec">0</div><p id="in-your-wallet-line"> in your wallet </P><td>To  <img src="./tttttttttt.png" alt="" height="12px" width="12px" id="image-of-email-address"> <input type="text" placeholder="email" id="send-to" size=48 required"><hr></td></tr><tr><td>Note <img src="./pen.png" alt="" height="12px" width="12px" id="pen-image"><input type="text" placeholder="optional message" id="note"><hr></td></tr><tr><td>Pay with<select name="assets" id="pay-asset-selector"><option>bitcoion</option><option>bitcoion</option><option>bitcoion</option><option>bitcoion</option><option>bitcoion</option><option>bitcoion</option><option>bitcoion</option></select></td></tr></table><button id="send-buttton" type="submit" onclick="sendingmoney()">send</button></div><div id="pay-sec-div3"><h1 id="pay-sec-div3-h1">Add Payment Method</h1><P id="pay-sec-div3-P" >Add easily money to tp's wallet by different methods</P><button type="button" id="add-payment-button" onclick="addmoney()" style="margin-top: 27px;">Debit card </button><button type="button" id="add-payment-button" onclick="addmoney()">Credit card</button></div>
+        </section>
+        <section id="price-sec-trade-page"><div class="price-table-above">+
+            <header align="right" id="header-of-pay-sec"><a href="#trade-sec"><button id="buy-sell-button" >Buy/Sell</button></a><a href="#pay-sec" ><button id="send-rec-button" >Send/Receive</button></a><div style="border: #dedfe2 2px solid;border-top: 0px;border-bottom: 0px;border-right:0px ;display: inline-block;position: fixed;top: 17px;right: 9px;"> <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="" style="height: 37px; width: 37px;"></div><hr style="background-color:#0052ff ;border:#0052ff solid  0.1px; margin-bottom: 0px;"></header>
+            <aside id="aside-of-pay-sec"><div id="aside-pay-sec-div1"> <img src="./final logo.png" alt="" style="height: 61px; width:100%;"> <div id="assetimg"><a href="#asset-section"><img src="./asset logo.png" alt="" id="" ></a></div><div id="tradeimg"><a href="#price-sec-trade-page"><img src="./graph logoafter.png" alt="" id=""></a></div><div id="payimg"><a href="#pay-sec"><img src="./pay logo.png" alt="" id=""></a></div><div id="learnimg"><a href="#learn-section"><img src="./block sec.png" alt="" id=""></a></div></div></aside>
+            
+            <div class="price-table-above1">
+            <h2 style="margin-top: 10px; text-align: center;">Top gainer</h2>
+            <img src="https://bit.ly/3fIV4gt" alt="Visit Cardano" aria-label="Visit Cardano" loading="lazy" height="40" width="40"
+            style="margin-left:87px; margin-right:87px;">
+            <h3 style=" text-align: center;" >Cardano</h3>
+          <span style="color:green; font-size: 16px; font-family: sans-serif; ">+7.52%</span> price change
+            </div>
+            <div class="price-table-above2">
+                <h2 style="margin-top: 10px; text-align: center;">New listing</h2>
+                <img src="https://bit.ly/3FzTwzA" alt="Visit DOGECOIN" aria-label="Visit DOGECOIN" loading="lazy" height="40" width="40"
+                style="margin-left:87px; margin-right:87px;">
+                <h3 style="text-align: center;">Dogecoin</h3>
+              <span style="color:green; font-size: 16px; font-family: sans-serif;">+4.16%</span> price change
+                </div>
+                <div class="price-table-above3">
+                    <h2 style="margin-top: 10px; text-align: center;">Most visited</h2>
+                    <img src="https://bit.ly/3KeJhEv" alt="Visit Shiba INU" aria-label="Visit Shiba INU" loading="lazy" height="40" width="40"
+                    style="margin-left:87px; margin-right:87px;">
+                    <h3 style="text-align: center;" >Shiba INU</h3>
+                  <span style="color:green; font-size: 16px; font-family: sans-serif;">+1.29%</span> price change
+                    </div>
+                    <div class="price-table-above4">
+                        <h2 style="margin-top: 10px; text-align: center;">Most traded</h2>
+                        <img src="./bitcoinpic.png" alt="Visit Bitcoin" aria-label="Visit Bitcoin" loading="lazy" height="40" width="40"
+                        style="margin-left:87px; margin-right:87px;">
+                        <h3 style="text-align: center;">Bitcoin</h3>
+                      <span style="color:green; font-size: 16px; font-family: sans-serif;">+0.36%</span> price change
+                        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <table id="table-price-1" width="95%">
+            <tr align="left" >
+              <th style="padding-top: 16px; padding-bottom: 16px; padding-left: 30px;">Name</th>
+              <th >Price</th>
+              <th>Change</th>
+              <th>Chart</th>
+              <th>Volume</th>
+              <th>Market cap</th>
+              <th>Supply</th>
+              <th>Trade</th>
+            </tr>
+            <tr >
+                
+                <td><img src="./bitcoinpic.png" height="30px" width="30px" align="center">&nbsp;<a href="./bitcoin price.html" style="text-decoration: none;color: unset;">Bitcoin</a></td>
+                <td> &#8377;3,698,407.04</td>
+                <td style="color: green;">&#43;0.36&#37;</td>
+                <td>
+                      <span class="sparkline">
+                        <span class="index"><span class="count" style="height: 37%;">(60,</span> </span>
+                        <span class="index"><span class="count" style="height: 87%;">220,</span> </span>
+                        <span class="index"><span class="count" style="height: 52%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 45%;">80,</span> </span>
+                        <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                        <span class="index"><span class="count" style="height: 30%;">90,</span> </span>
+                        <span class="index"><span class="count" style="height: 90%;">180,</span> </span>
+                        <span class="index"><span class="count" style="height: 52%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 63%;">120,</span> </span>
+                        <span class="index"><span class="count" style="height: 81%;">160,</span> </span>
+                        <span class="index"><span class="count" style="height: 68%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                        <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 46%;">125)</span> </span>
+                      </span>
+                    
+                </td>
+                <td>&#8377;22.6B</td>
+                <td>&#8377;60.4T</td>
+                <td>18.9M</td>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3fsEbGy" height="30px" width="30px" align="center">&nbsp;<a href="./ethereum price.html" style="text-decoration: none;color: unset;">Ethereum</a></td>
+                <td> &#8377;246,256.59</td>
+                <td style="color: green;">&#43;0.17&#37;</td>
+                <td>
+    
+                        <span class="sparkline">
+                          <span class="index"><span class="count" style="height: 30%;">(90,</span> </span>
+                          <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                          <span class="index"><span class="count" style="height: 77%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 83%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 46%;">125,</span> </span>
+                          <span class="index"><span class="count" style="height: 87%;">150,</span> </span>
+                          <span class="index"><span class="count" style="height: 24%;">100,</span> </span>
+                          <span class="index"><span class="count" style="height: 38%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 13%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 60%;">90,</span> </span>
+                          <span class="index"><span class="count" style="height: 7%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 98%;">175,</span> </span>
+                          <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                          <span class="index"><span class="count" style="height: 76%;">125)</span> </span>
+                        </span>
+                      
+                </td>
+                <td>&#8377;12.6B</td>
+                <td>&#8377;29.3T</td>
+                <td>119.2M</td>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3ntIzJY" height="30px" width="30px" align="center">&nbsp;<a href="./binance coin price.html" style="text-decoration: none;color: unset;">Binance Coin</a></td>
+                <td> &#8377;36,579.48</td>
+                <td style="color: green;">&#43;0.43&#37;</td>
+                <td>
+                        <span class="sparkline">
+                          <span class="index"><span class="count" style="height: 32%;">(75,</span> </span>
+                          <span class="index"><span class="count" style="height: 74%;">100,</span> </span>
+                          <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                          <span class="index"><span class="count" style="height: 75%;">80,</span> </span>
+                          <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 70%;">90,</span> </span>
+                          <span class="index"><span class="count" style="height: 79%;">110,</span> </span>
+                          <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 53%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 74%;">100)</span></span>
+                        </span>
+                      </li>
+                </td>
+                <td>&#8377;2.4B</td>
+                <td>&#8377;6.1T</td>
+                <td>116.8M</td>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3fop1lL" height="30px" width="30px" align="center">&nbsp;<a href="./tether.html" style="text-decoration: none;color: unset;">Tether</a></td>
+                <td> &#8377;74.18</td>
+                <td style="color: green;">&#43;0.02&#37;</td>
+                <td>
+                       <span class="sparkline">
+                         <span class="index"><span class="count" style="height: 11%;">(25,</span> </span>
+                         <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                         <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                         <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                         <span class="index"><span class="count" style="height: 11%;">25,</span> </span>
+                         <span class="index"><span class="count" style="height: 16%;">35,</span> </span>
+                         <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                         <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                         <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                         <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                         <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 11%;">25)</span> </span>
+                       </span>
+                </td>
+                <td>&#8377;55.1B</td>
+                <td>&#8377;5.8T</td>
+                <td>78.4B</td>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3tvks13" height="30px" width="30px" align="center">&nbsp;<a href="./solana price.html" style="text-decoration: none;color: unset;">Solana</a></td>
+                <td> &#8377;10,806.79</td>
+                <td style="color: green;">&#43;2.56&#37;</td>
+                <td>
+                      <span class="sparkline">
+                        <span class="index"><span class="count" style="height: 7%;">(60,</span> </span>
+                        <span class="index"><span class="count" style="height: 27%;">220,</span> </span>
+                        <span class="index"><span class="count" style="height: 22%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 55%;">80,</span> </span>
+                        <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                        <span class="index"><span class="count" style="height: 60%;">90,</span> </span>
+                        <span class="index"><span class="count" style="height: 60%;">180,</span> </span>
+                        <span class="index"><span class="count" style="height: 42%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 53%;">120,</span> </span>
+                        <span class="index"><span class="count" style="height: 71%;">160,</span> </span>
+                        <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                        <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                      </span>
+                </td>
+                <td>&#8377;1.6B</td>
+                <td>&#8377;3.4T</td>
+                <TD>314.0M</TD>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3fIV4gt" height="30px" width="30px" align="center">&nbsp;<a href="./cardano price.htm" style="text-decoration: none;color: unset;">Cardano</a></td>
+                <td> &#8377;94.07</td>
+                <td style="color: green;">&#43;7.52&#37;</td>
+                <td>
+                        <span class="sparkline">
+                          <span class="index"><span class="count" style="height: 40%;">(90,</span> </span>
+                          <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 56%;">125,</span> </span>
+                          <span class="index"><span class="count" style="height: 67%;">150,</span> </span>
+                          <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                          <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                          <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                          <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                        </span>
+                </td>
+                <TD>&#8377;1.4B</TD>
+                <TD>&#8377;3.2T</TD>
+                <TD>33.5B</TD>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3FzTwzA" height="30px" width="30px" align="center">&nbsp;<a href="./dogecoin price.html" style="text-decoration: none;color: unset;">Dogecoin</a></td>
+                <td> &#8377;14.16</td>
+                <td style="color: green;">&#43;4.16&#37;</td>
+                <td>
+                        <span class="sparkline">
+                          <span class="index"><span class="count" style="height: 22%;">(75,</span> </span>
+                          <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                          <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                          <span class="index"><span class="count" style="height: 35%;">80,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                          <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                          <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 44%;">100)</span></span>
+                        </span>
+                </td>
+                <TD>&#8377;3.9B</TD>
+                <TD>&#8377;1.9T</TD>
+                <TD>132.7B</TD>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3KeJhEv" height="30px" width="30px" align="center">&nbsp;<a href="./shiba inu price.html" style="text-decoration: none;color: unset;">Shiba INU</a></td>
+                <td> &#8377;0.00230626</td>
+                <td style="color: green;">&#43;1.29&#37;</td>
+                <td>
+                    
+                       <span class="sparkline">
+                         <span class="index"><span class="count" style="height: 41%;">(25,</span> </span>
+                         <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 33%;">30,</span> </span>
+                         <span class="index"><span class="count" style="height: 68%;">20,</span> </span>
+                         <span class="index"><span class="count" style="height: 38%;">40,</span> </span>
+                         <span class="index"><span class="count" style="height: 61%;">25,</span> </span>
+                         <span class="index"><span class="count" style="height: 46%;">35,</span> </span>
+                         <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 67%;">60,</span> </span>
+                         <span class="index"><span class="count" style="height: 43%;">30,</span> </span>
+                         <span class="index"><span class="count" style="height: 78%;">20,</span> </span>
+                         <span class="index"><span class="count" style="height: 58%;">40,</span> </span>
+                         <span class="index"><span class="count" style="height: 62%;">50,</span> </span>
+                         <span class="index"><span class="count" style="height: 81%;">25)</span> </span>
+                       </span>
+                     
+                </td>
+                <TD>&#8377;1.1B</TD>
+                <TD>&#8377;1.3T</TD>
+                <TD>549.1T</TD>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3rl2TOL" height="30px" width="30px" align="center">&nbsp;<a href="./binance usd price.html" style="text-decoration: none;color: unset;">Binance USD</a></td>
+                <td> &#8377;74.20</td>
+                <td style="color: green;">&#43;0.05&#37;</td>
+                <td><span class="sparkline">
+                        <span class="index"><span class="count" style="height: 57%;">(60,</span> </span>
+                        <span class="index"><span class="count" style="height: 67%;">220,</span> </span>
+                        <span class="index"><span class="count" style="height: 32%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 65%;">80,</span> </span>
+                        <span class="index"><span class="count" style="height: 79%;">110,</span> </span>
+                        <span class="index"><span class="count" style="height: 70%;">90,</span> </span>
+                        <span class="index"><span class="count" style="height: 50%;">180,</span> </span>
+                        <span class="index"><span class="count" style="height: 32%;">140,</span> </span>
+                        <span class="index"><span class="count" style="height: 83%;">120,</span> </span>
+                        <span class="index"><span class="count" style="height: 41%;">160,</span> </span>
+                        <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                        <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                        <span class="index"><span class="count" style="height: 96%;">125)</span> </span>
+                      </span>
+                    </td>
+                <TD>&#8377;3.7B</TD>
+                <TD>&#8377;1.1T</TD>
+                <TD>14.4B</TD>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              <tr >
+                
+                <td><img src="https://bit.ly/3A1TGP6" height="30px" width="30px" align="center">&nbsp;<a href="./terra price.html" style="text-decoration: none;color: unset;">Terra</a></td>
+                <td> &#8377;6097.69</td>
+                <td style="color: green;">&#43;0.71&#37;</td>
+                <td>
+                        <span class="sparkline">
+                          <span class="index"><span class="count" style="height: 60%;">(90,</span> </span>
+                          <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                          <span class="index"><span class="count" style="height: 47%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 73%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 76%;">125,</span> </span>
+                          <span class="index"><span class="count" style="height: 67%;">150,</span> </span>
+                          <span class="index"><span class="count" style="height: 64%;">100,</span> </span>
+                          <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                          <span class="index"><span class="count" style="height: 53%;">75,</span> </span>
+                          <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                          <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                          <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                          <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                          <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                        </span>
+                    </td>
+                <td>&#8377;1.6B</td>
+                <td>&#8377;2.2T</td>
+                <td>359.2M</td>
+                <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+              </tr>
+              </table>
+              </div></section>
+
+        <section id="learn-section"><header align="right" id="header-of-learn-sec"><a href="#trade-sec"><button id="buy-sell-button" >Buy/Sell</button></a><a href="#pay-sec" ><button id="send-rec-button" >Send/Receive</button></a><div style="border: #dedfe2 2px solid;border-top: 0px;border-bottom: 0px;border-right:0px ;display: inline-block;position: fixed;top: 17px;right: 9px;"> <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png" alt="" style="height: 37px; width: 37px;"></div><hr style="background-color:#0052ff ;border:#0052ff solid  0.1px; margin-bottom: 0px;"></header><aside id="aside-of-learn-sec"><div id="aside-learn-sec-div1"> <img src="./final logo.png" alt="" style="height: 61px; width:100%;"> <div id="assetimg"><a href="#asset-section"><img src="./asset logo.png" alt="" id="" ></a></div><div id="tradeimg"><a href="#price-sec-trade-page"><img src="./graph logo.png" alt="" id=""></a></div><div id="payimg"><a href="#pay-sec"><img src="./pay logo.png" alt="" id=""></a></div><div id="learnimg"><img src="./block secafter.png" alt="" id=""></div></div></aside><div id="learn-div-style"><div id="crypto"><a href=""><img src="https://images.ctfassets.net/q5ulk4bp65r7/5FbQ4oiMCnZMZZ1udW3jYZ/fd738c69fc6508d3286163661713f684/Learn_Illustration_What_is_a_Crypto_Wallet.png?w=768&fm=png" alt=""><p><b>What is cryptocurrency?</b><br>Bitcoin, Ethereum, and other crypto are revolutionizing how we invest, bank, and use money. Read this beginner’s guide...</p></a></div><div id="bitcoin"><a href="#"><img src="https://images.ctfassets.net/q5ulk4bp65r7/lUIdMeDm9tf33LZNjPqz8/a44f28b20bd9846efc62cf5a230d875a/Learn_Illustration_Ultimate_Guide_Bitcoin.webp?w=768&fm=png" alt=""><p><b>What is Bitcoin?</b><br>The world’s first widely-adopted cryptocurrency. With Bitcoin, people can securely and directly send each other digital money on the internet.</p></a></div><div id="blockchain"><a href=""><img src="https://www.iotworldtoday.com/files/2020/01/8-Blockchain-900x600-877x432.jpg" alt=""><p><b>What is blockchain?</b><br>Cryptocurrencies like Bitcoin and Ethereum are powered by a technology called the blockchain.</p></a></div><div id="invest-in-crypto"><a href=""><img src="https://images.fintra.co.in/cms/how-to-invest-in-cryptocurrency.png" alt=""><p><b>When is the best time to invest in crypto?</b><br>Bitcoin, Ethereum, and other crypto are revolutionizing how we invest, bank, and use money. Read this beginner’s guide...</p></a></div><div id="nft"><a href=""><img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/03/23/102271.jpg" alt=""><p><b>How do you buy an NFT?</b><br>Quick-start guide to nabbing the digital collectible of your dreams</p></a></div><div id="ethereum"><a href=""><img src="https://images.ctfassets.net/q5ulk4bp65r7/3thWklmvu2WmAHJh0k1AcC/51521feeef170d94a446fbec6f262912/what-is-ethereum.png?w=768&fm=png" alt=""><p><b>What is ethereum?</b><br>Ethereum is the second-biggest cryptocurrency by market cap after Bitcoin. It is also a decentralized computing platform that can run a wide variety of applications...</p></a></div><div id="crypto-wallet"><a href=""><img src="https://images.idgesg.net/images/article/2019/04/crypto-currency_hand-holding-phone-iwth-bitcoin_digital-wallet_bitcoin_blockchain-100793898-large.jpg?auto=webp&quality=85,70" alt=""><p><b>How to set up a crypto wallet?</b><br>A crypto wallet is a place where you can securely keep your crypto. There are many different types of crypto wallets, but the...</p></a></div></div><div id="learn-aside-sec"><h3>Popular news channel</h3><DIV><a href="https://www.ndtv.com/business/cryptocurrency"><img src="https://yt3.ggpht.com/-L8AxmJwZuy8/AAAAAAAAAAI/AAAAAAAAAAA/eZRzS7tRVX0/s900-c-k-no/photo.jpg" alt="" height="50px" width="65px" ><P style="display: inline-block ; position: absolute;margin-top: 3px; MARGIN-LEFT: 20PX;">NDTV CRYPTOCURRENCY</P></a></DIV><DIV><A href="https://www.cnbctv18.com/tags/cryptocurrency.htm"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CNBC_TV18.png" alt="" height="50px" width="65px"><P style="display: inline-block ; position: absolute;margin-top: 7px; MARGIN-LEFT: 20PX;">CNBC TV18</P></A></DIV><DIV><A href="https://economictimes.indiatimes.com/markets/cryptocurrency"><img src="data:image/png;base64,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" alt="" height="50px" width="65px" ><P  style="display: inline-block ; position: absolute;margin-top: 3px; MARGIN-LEFT: 20PX; text-transform: uppercase;">The Economic Times</P></A></DIV><DIV><A href="https://www.indiatvnews.com/topic/cryptocurrency"><img src="data:image/jpeg;base64,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" alt="" height="50px" width="65px" style=""><P style="display: inline-block ; position: absolute;margin-top: 3px; MARGIN-LEFT: 20PX;">INDIA TV CRYPTOCURRENCY</P></A></DIV><DIV><A href="https://www.news18.com/news/business/cryptocurrency/cryptocurrency-update-6-crypto-coins-gain-up-to-1052-in-a-day-bitcoin-below-47000-4625693.html"><img src="https://www.clipartkey.com/mpngs/m/25-255294_news-18-hindi-clipart-png-download-news18-network.png" alt="" height="50px" width="65px" style=""><P style="display: inline-block ; position: absolute;margin-top: 7px; MARGIN-LEFT: 20PX;">NEWS 18</P></A></DIV></div>                </section>
+
+
+    </main>
+    <script>                 var walletmoney=0
+        function displayname(){
+            a=document.getElementById("First-Name").value;
+            b=document.getElementById("Last-Name").value;
+            alert("Hi"+" "+a+" "+b+" !!"+"\n"+"Welcome to trading platform");
+        }
+        function addmoney(){
+                            var cardnum=parseInt(prompt("Enter a card number"));
+                            var expdate=(prompt("Enter a expiry date"));
+                            var cvv=parseInt(prompt("Enter a cvv number"));
+           
+                            var otppass=1234
+                            var otp=parseInt(prompt("Enter a otp"));
+                            if(otp==otppass){
+                                
+                                var moneytransfer=parseInt(prompt("Enter a amount you want to transfer to tp wallet"));
+                                walletmoney+=moneytransfer   
+                                alert("Rs."+moneytransfer+" added to your tp's wallet \nNow You have Rs."+walletmoney+" in your wallet")  
+                                document.getElementById("wallet-balance-in-pay-sec").innerHTML = walletmoney;  
+                            
+                        }
+                                             else{
+                                                 alert("your otp is incorrect")
+                                                 let ask="Want to try again?"
+                                                 if (confirm(ask)==true){
+                                                                        addmoney();
+                                                                         }
+                                                     else{
+                                                         alert("Thank you!!")
+                                                          }
+                                            }
+                            }document.getElementById("wallet-balance-in-pay-sec").innerHTML = walletmoney; 
+                           var k=(document.getElementById("sendingrupees").value);
+                           function sendingmoney()
+                                {
+                                 
+                                walletmoney-=k;
+                                
+                                document.getElementById("wallet-balance-in-pay-sec").innerHTML = walletmoney;   
+                              }           
+    </script>
+</body>
+</html>

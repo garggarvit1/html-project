@@ -1,0 +1,24 @@
+.nav div{
+    height:4px;
+    background-color:whitesmoke;
+    margin:5px;
+    border-radius:25px;
+    transition:0.3
+}
+.nav{
+    width:30px;
+    display:block;
+    margin:lem 0 0 lem;
+}
+.one{
+    width:30px;
+}
+.two{
+    width:20px;
+}
+.three{
+    width:25px;
+}
+.nav:hover div{
+    width:30px;
+}

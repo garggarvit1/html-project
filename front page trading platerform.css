@@ -1,0 +1,105 @@
+#border-box-front-page{
+    
+    margin-top: 100px;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: 0%;
+    padding-right: 23px;
+}
+body{
+    font-family: sans-serif;
+    margin: 0%;
+}
+nav{
+    background-color:#354d9e2d;
+    height: 160px;
+    border-top-right-radius: 134px;
+    border-bottom-left-radius: 134px;
+  
+    width:100%;
+    top: 0;
+}
+label.logo-front-page{
+    color: rgb(47, 0, 255);
+    font-size: 40px;
+    font-style: bold;
+    line-height: 50px;
+    padding:0px;
+    font-style: italic;
+}
+nav ul{
+    float: right;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+   
+}
+nav ul li a{
+    color:blue;
+    font-size: 17px;
+    padding:7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin: 13px;
+}
+#logo-img-front-page{
+ margin-top: 30px;
+ margin-left: 50px;
+}
+a{
+    text-decoration: none;
+}
+
+#get-started-button{
+    text-decoration: none;
+    color: white;
+}
+
+    #sign-in-button-front-page{
+        position: relative;
+        width: auto;
+        margin: 0px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        padding: 9px 0px;
+        font-size: 14px;
+        line-height: 14px;
+        border: 1px solid rgb(0, 82, 255);
+        background-color: rgb(0, 82, 255);}
+    
+    #image{
+        float: right;
+        margin-right:50px;
+        margin-top: 30px;
+        
+    }
+    #h1-for-crypto{
+        font-size: 60px;
+        margin-left: 40px;
+    }
+    #front-page-button2{
+        font-size: 20px;
+        background-image:linear-gradient(blue,cyan);
+        margin-left: 40px;
+    }
+    #crypto-img2{
+        background-image:url(./Screenshot\ 2021-12-23\ 121013.png);
+        background-size: cover;
+        height: 400px;
+        background-repeat: no-repeat;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 3px;
+        margin-left: 3px;
+        
+    }
+    #image2{
+        float: right;
+        
+        margin-right:70px;
+        margin-top: 0px;
+    }

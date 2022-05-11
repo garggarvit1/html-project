@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #table-price-1{
+        margin-top: 5   0px; 
+        margin-left: 60PX; 
+        border:1px #7274794b solid; 
+        border-radius:10px; 
+        font-size: 16px; 
+        font-family:sans-serif; 
+        padding-bottom: 14px; 
+        padding-top: 14px;
+        }
+        tr:hover{background-color: #82899e0e;}
+        td{padding-top: 14px; padding-bottom: 14px; padding-left: 24px;}
+        .price-table-above{
+            display: flex;
+            justify-content: space-around;
+            font-family: sans-serif;
+            margin-top: 30px;
+        }
+        .price-table-above1{
+            border: 1px #7274794b solid;
+            border-radius: 10px;
+            width: 217px;
+            font-size: 14px;
+            font-family: sans-serif;
+        }
+        .price-table-above2{
+          font-size: 14px;
+          width: 217px;
+            border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .price-table-above3{
+          font-size: 14px;
+          width: 217px;
+            border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .price-table-above4{
+          font-size: 14px;
+          width: 217px;  
+          border: 1px #7274794b solid;
+            font-family: sans-serif;
+            border-radius: 10px;
+        }
+        .sparkline {
+            transform: scale(3);
+            display: inline-block;
+            height: 1em;
+            margin: 0 0.5em;
+            margin: 0.5px;
+        }
+
+        .sparkline .index {
+            position: relative;
+            float: left; 
+            width: 2px; 
+            height: 1em; 
+        }
+
+        .sparkline .index .count { 
+            display: block; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 0; 
+            background: #AAA;
+            font: 0/0 a;
+            text-shadow: none;
+            color: transparent;
+        }
+        .buy-button-1-design{
+            position: relative;
+            width: auto;
+            margin: 0px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            padding: 11px 26px;
+            font-size: 14px;
+            line-height: 14px;
+            border: 1px solid green;
+            background-color:green;
+        } 
+        .buy-button-1{
+            text-decoration: none;
+            color:white;
+        }
+        header{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 10;
+}
+#border-box{
+
+    margin: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: 0%;
+    padding-right: 23px;
+        margin-top: 10px;
+}
+nav div{
+    background-color: white;
+    height: 60px;
+    top: 0%;
+    position: fixed;
+}
+
+
+nav{
+    background-color:#dbe0ee;
+    height: 77px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width:100%;
+    top: 0;
+}
+h2.logo{
+    color: rgb(47, 0, 255);
+    font-size: 40px;
+    font-style: bold;
+    line-height: 50px;
+    padding: 0px 75px;
+    font-style: italic;
+    display: inline-block;
+    margin-top: 6px;
+}
+nav ul{
+    float: right;
+    
+}
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+   
+}
+nav ul li a{
+    color:blue;
+    font-size: 17px;
+    padding:7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin: 13px;
+    text-decoration: none;
+}
+ header a:hover{
+    background: #82899ec2;
+    transition: .5s;
+    tab-size: 10px;
+    color: white;
+}
+#price-glow{
+    background-color: #82899ec2;
+    color: white;}
+body{margin-top: 115px;}
+        .checkbtn{
+            font-size: 25px;
+            color:#ffffff;
+            float: right;
+            line-height: 80px;
+            }
+        #sign-in-button{
+            position: relative;
+            width: auto;
+            margin: 0px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            padding: 9px 0px;
+            font-size: 14px;
+            line-height: 14px;
+            border: 1px solid rgb(0, 82, 255);
+            background-color: rgb(0, 82, 255);}
+            .footer{
+    background-color: white;
+    padding: 70px;
+}
+.container{
+    max-width:1170px;
+    margin:auto;
+
+}
+#footer-ul{
+    list-style: none;
+}
+#footer-ul li{
+    text-align: left;
+    margin-bottom:10px ;
+}
+#footer-ul li a{
+    color:dimgrey;
+    text-decoration:none ;
+    display: block;
+}
+#footer-ul li a:hover{
+    color: blue;
+    padding-left: 8px;
+}
+.footer-col{
+      width: 25%;
+      padding: 0 70px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-col h4{
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+    margin-left: 30px;
+}
+/* responsive */
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+    <header>
+        
+      <nav>
+          <div></div>
+          <h2 class="logo">Cryptocurrency</h2>
+      
+              <ul id="border-box">
+                  <li ><a href="./crypto 22.12.2021.html" >home </a></li>
+                  <li><a href="#" id="price-glow">prices</a></li>
+                  <li><a href="./learn-page.html">learn</a></li>
+                  <li><a href="./NEWS PAGE.html">news</a></li>
+                  <li><a href="./trading page of crypto.html">trade</a></li>
+                  <li>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                  <li><button id="sign-in-button"><a href="C:\project 1(online trading)\sign in.html" style="color: rgb(255, 255, 255);;">sign in</a></button></li>
+              </ul>
+      </nav>
+  </header>
+    <div class="price-table-above">
+        <div class="price-table-above1">
+        <h2 style="margin-top: 10px; text-align: center;">Top gainer</h2>
+        <img src="https://bit.ly/3fIV4gt" alt="Visit Cardano" aria-label="Visit Cardano" loading="lazy" height="40" width="40"
+        style="margin-left:87px; margin-right:87px;">
+        <h3 style=" text-align: center;" >Cardano</h3>
+      <span style="color:green; font-size: 16px; font-family: sans-serif; ">+7.52%</span> price change
+        </div>
+        <div class="price-table-above2">
+            <h2 style="margin-top: 10px; text-align: center;">New listing</h2>
+            <img src="https://bit.ly/3FzTwzA" alt="Visit DOGECOIN" aria-label="Visit DOGECOIN" loading="lazy" height="40" width="40"
+            style="margin-left:87px; margin-right:87px;">
+            <h3 style="text-align: center;">Dogecoin</h3>
+          <span style="color:green; font-size: 16px; font-family: sans-serif;">+4.16%</span> price change
+            </div>
+            <div class="price-table-above3">
+                <h2 style="margin-top: 10px; text-align: center;">Most visited</h2>
+                <img src="https://bit.ly/3KeJhEv" alt="Visit Shiba INU" aria-label="Visit Shiba INU" loading="lazy" height="40" width="40"
+                style="margin-left:87px; margin-right:87px;">
+                <h3 style="text-align: center;" >Shiba INU</h3>
+              <span style="color:green; font-size: 16px; font-family: sans-serif;">+1.29%</span> price change
+                </div>
+                <div class="price-table-above4">
+                    <h2 style="margin-top: 10px; text-align: center;">Most traded</h2>
+                    <img src="./bitcoinpic.png" alt="Visit Bitcoin" aria-label="Visit Bitcoin" loading="lazy" height="40" width="40"
+                    style="margin-left:87px; margin-right:87px;">
+                    <h3 style="text-align: center;">Bitcoin</h3>
+                  <span style="color:green; font-size: 16px; font-family: sans-serif;">+0.36%</span> price change
+                    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <table id="table-price-1" width="95%">
+        <tr align="left" >
+          <th style="padding-top: 16px; padding-bottom: 16px; padding-left: 30px;">Name</th>
+          <th >Price</th>
+          <th>Change</th>
+          <th>Chart</th>
+          <th>Volume</th>
+          <th>Market cap</th>
+          <th>Supply</th>
+          <th>Trade</th>
+        </tr>
+        <tr >
+            
+            <td><img src="./bitcoinpic.png" height="30px" width="30px" align="center">&nbsp;<a href="./bitcoin price.html" style="text-decoration: none;color: unset;">Bitcoin</a></td>
+            <td> &#8377;3,698,407.04</td>
+            <td style="color: green;">&#43;0.36&#37;</td>
+            <td>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 37%;">(60,</span> </span>
+                    <span class="index"><span class="count" style="height: 87%;">220,</span> </span>
+                    <span class="index"><span class="count" style="height: 52%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 45%;">80,</span> </span>
+                    <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 30%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 90%;">180,</span> </span>
+                    <span class="index"><span class="count" style="height: 52%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 63%;">120,</span> </span>
+                    <span class="index"><span class="count" style="height: 81%;">160,</span> </span>
+                    <span class="index"><span class="count" style="height: 68%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                    <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 46%;">125)</span> </span>
+                  </span>
+                
+            </td>
+            <td>&#8377;22.6B</td>
+            <td>&#8377;60.4T</td>
+            <td>18.9M</td>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3fsEbGy" height="30px" width="30px" align="center">&nbsp;<a href="./ethereum price.html" style="text-decoration: none;color: unset;">Ethereum</a></td>
+            <td> &#8377;246,256.59</td>
+            <td style="color: green;">&#43;0.17&#37;</td>
+            <td>
+
+                    <span class="sparkline">
+                      <span class="index"><span class="count" style="height: 30%;">(90,</span> </span>
+                      <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                      <span class="index"><span class="count" style="height: 77%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 83%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 46%;">125,</span> </span>
+                      <span class="index"><span class="count" style="height: 87%;">150,</span> </span>
+                      <span class="index"><span class="count" style="height: 24%;">100,</span> </span>
+                      <span class="index"><span class="count" style="height: 38%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 13%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 60%;">90,</span> </span>
+                      <span class="index"><span class="count" style="height: 7%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 98%;">175,</span> </span>
+                      <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                      <span class="index"><span class="count" style="height: 76%;">125)</span> </span>
+                    </span>
+                  
+            </td>
+            <td>&#8377;12.6B</td>
+            <td>&#8377;29.3T</td>
+            <td>119.2M</td>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3ntIzJY" height="30px" width="30px" align="center">&nbsp;<a href="./binance coin price.html" style="text-decoration: none;color: unset;">Binance Coin</a></td>
+            <td> &#8377;36,579.48</td>
+            <td style="color: green;">&#43;0.43&#37;</td>
+            <td>
+                    <span class="sparkline">
+                      <span class="index"><span class="count" style="height: 32%;">(75,</span> </span>
+                      <span class="index"><span class="count" style="height: 74%;">100,</span> </span>
+                      <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                      <span class="index"><span class="count" style="height: 75%;">80,</span> </span>
+                      <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 70%;">90,</span> </span>
+                      <span class="index"><span class="count" style="height: 79%;">110,</span> </span>
+                      <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 53%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 57%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 74%;">100)</span></span>
+                    </span>
+                  </li>
+            </td>
+            <td>&#8377;2.4B</td>
+            <td>&#8377;6.1T</td>
+            <td>116.8M</td>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3fop1lL" height="30px" width="30px" align="center">&nbsp;<a href="./tether.html" style="text-decoration: none;color: unset;">Tether</a></td>
+            <td> &#8377;74.18</td>
+            <td style="color: green;">&#43;0.02&#37;</td>
+            <td>
+                   <span class="sparkline">
+                     <span class="index"><span class="count" style="height: 11%;">(25,</span> </span>
+                     <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                     <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                     <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                     <span class="index"><span class="count" style="height: 11%;">25,</span> </span>
+                     <span class="index"><span class="count" style="height: 16%;">35,</span> </span>
+                     <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                     <span class="index"><span class="count" style="height: 13%;">30,</span> </span>
+                     <span class="index"><span class="count" style="height: 8%;">20,</span> </span>
+                     <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                     <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 11%;">25)</span> </span>
+                   </span>
+            </td>
+            <td>&#8377;55.1B</td>
+            <td>&#8377;5.8T</td>
+            <td>78.4B</td>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3tvks13" height="30px" width="30px" align="center">&nbsp;<a href="./solana price.html" style="text-decoration: none;color: unset;">Solana</a></td>
+            <td> &#8377;10,806.79</td>
+            <td style="color: green;">&#43;2.56&#37;</td>
+            <td>
+                  <span class="sparkline">
+                    <span class="index"><span class="count" style="height: 7%;">(60,</span> </span>
+                    <span class="index"><span class="count" style="height: 27%;">220,</span> </span>
+                    <span class="index"><span class="count" style="height: 22%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 55%;">80,</span> </span>
+                    <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 60%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 60%;">180,</span> </span>
+                    <span class="index"><span class="count" style="height: 42%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 53%;">120,</span> </span>
+                    <span class="index"><span class="count" style="height: 71%;">160,</span> </span>
+                    <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                    <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                  </span>
+            </td>
+            <td>&#8377;1.6B</td>
+            <td>&#8377;3.4T</td>
+            <TD>314.0M</TD>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3fIV4gt" height="30px" width="30px" align="center">&nbsp;<a href="./cardano price.htm" style="text-decoration: none;color: unset;">Cardano</a></td>
+            <td> &#8377;94.07</td>
+            <td style="color: green;">&#43;7.52&#37;</td>
+            <td>
+                    <span class="sparkline">
+                      <span class="index"><span class="count" style="height: 40%;">(90,</span> </span>
+                      <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 56%;">125,</span> </span>
+                      <span class="index"><span class="count" style="height: 67%;">150,</span> </span>
+                      <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                      <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                      <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                      <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                    </span>
+            </td>
+            <TD>&#8377;1.4B</TD>
+            <TD>&#8377;3.2T</TD>
+            <TD>33.5B</TD>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3FzTwzA" height="30px" width="30px" align="center">&nbsp;<a href="./dogecoin price.html" style="text-decoration: none;color: unset;">Dogecoin</a></td>
+            <td> &#8377;14.16</td>
+            <td style="color: green;">&#43;4.16&#37;</td>
+            <td>
+                    <span class="sparkline">
+                      <span class="index"><span class="count" style="height: 22%;">(75,</span> </span>
+                      <span class="index"><span class="count" style="height: 44%;">100,</span> </span>
+                      <span class="index"><span class="count" style="height: 22%;">50,</span> </span>
+                      <span class="index"><span class="count" style="height: 35%;">80,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                      <span class="index"><span class="count" style="height: 49%;">110,</span> </span>
+                      <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 33%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 18%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 44%;">100)</span></span>
+                    </span>
+            </td>
+            <TD>&#8377;3.9B</TD>
+            <TD>&#8377;1.9T</TD>
+            <TD>132.7B</TD>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3KeJhEv" height="30px" width="30px" align="center">&nbsp;<a href="./shiba inu price.html" style="text-decoration: none;color: unset;">Shiba INU</a></td>
+            <td> &#8377;0.00230626</td>
+            <td style="color: green;">&#43;1.29&#37;</td>
+            <td>
+                
+                   <span class="sparkline">
+                     <span class="index"><span class="count" style="height: 41%;">(25,</span> </span>
+                     <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 33%;">30,</span> </span>
+                     <span class="index"><span class="count" style="height: 68%;">20,</span> </span>
+                     <span class="index"><span class="count" style="height: 38%;">40,</span> </span>
+                     <span class="index"><span class="count" style="height: 61%;">25,</span> </span>
+                     <span class="index"><span class="count" style="height: 46%;">35,</span> </span>
+                     <span class="index"><span class="count" style="height: 52%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 67%;">60,</span> </span>
+                     <span class="index"><span class="count" style="height: 43%;">30,</span> </span>
+                     <span class="index"><span class="count" style="height: 78%;">20,</span> </span>
+                     <span class="index"><span class="count" style="height: 58%;">40,</span> </span>
+                     <span class="index"><span class="count" style="height: 62%;">50,</span> </span>
+                     <span class="index"><span class="count" style="height: 81%;">25)</span> </span>
+                   </span>
+                 
+            </td>
+            <TD>&#8377;1.1B</TD>
+            <TD>&#8377;1.3T</TD>
+            <TD>549.1T</TD>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3rl2TOL" height="30px" width="30px" align="center">&nbsp;<a href="./binance usd price.html" style="text-decoration: none;color: unset;">Binance USD</a></td>
+            <td> &#8377;74.20</td>
+            <td style="color: green;">&#43;0.05&#37;</td>
+            <td><span class="sparkline">
+                    <span class="index"><span class="count" style="height: 57%;">(60,</span> </span>
+                    <span class="index"><span class="count" style="height: 67%;">220,</span> </span>
+                    <span class="index"><span class="count" style="height: 32%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 65%;">80,</span> </span>
+                    <span class="index"><span class="count" style="height: 79%;">110,</span> </span>
+                    <span class="index"><span class="count" style="height: 70%;">90,</span> </span>
+                    <span class="index"><span class="count" style="height: 50%;">180,</span> </span>
+                    <span class="index"><span class="count" style="height: 32%;">140,</span> </span>
+                    <span class="index"><span class="count" style="height: 83%;">120,</span> </span>
+                    <span class="index"><span class="count" style="height: 41%;">160,</span> </span>
+                    <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                    <span class="index"><span class="count" style="height: 88%;">175,</span> </span>
+                    <span class="index"><span class="count" style="height: 96%;">125)</span> </span>
+                  </span>
+                </td>
+            <TD>&#8377;3.7B</TD>
+            <TD>&#8377;1.1T</TD>
+            <TD>14.4B</TD>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          <tr >
+            
+            <td><img src="https://bit.ly/3A1TGP6" height="30px" width="30px" align="center">&nbsp;<a href="./terra price.html" style="text-decoration: none;color: unset;">Terra</a></td>
+            <td> &#8377;6097.69</td>
+            <td style="color: green;">&#43;0.71&#37;</td>
+            <td>
+                    <span class="sparkline">
+                      <span class="index"><span class="count" style="height: 60%;">(90,</span> </span>
+                      <span class="index"><span class="count" style="height: 59%;">110,</span> </span>
+                      <span class="index"><span class="count" style="height: 47%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 73%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 76%;">125,</span> </span>
+                      <span class="index"><span class="count" style="height: 67%;">150,</span> </span>
+                      <span class="index"><span class="count" style="height: 64%;">100,</span> </span>
+                      <span class="index"><span class="count" style="height: 48%;">40,</span> </span>
+                      <span class="index"><span class="count" style="height: 53%;">75,</span> </span>
+                      <span class="index"><span class="count" style="height: 40%;">90,</span> </span>
+                      <span class="index"><span class="count" style="height: 27%;">60,</span> </span>
+                      <span class="index"><span class="count" style="height: 78%;">175,</span> </span>
+                      <span class="index"><span class="count" style="height: 100%;">225,</span> </span>
+                      <span class="index"><span class="count" style="height: 56%;">125)</span> </span>
+                    </span>
+                </td>
+            <td>&#8377;1.6B</td>
+            <td>&#8377;2.2T</td>
+            <td>359.2M</td>
+            <td><button class="buy-button-1-design"><a href="./trading page of crypto.html" class="buy-button-1">Trade</a></button></td>
+          </tr>
+          </table>
+          </div>
+          <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul id="footer-ul"> 
+                            <li><a href="#">About</a></li>
+                            <li><a href="./NEWS PAGE.html">Press</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Legal&privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Learn</h4>
+                        <ul id="footer-ul"> 
+                            <li><a href="./what is cryptocurrency(learn).html">What is crypto?</a></li>
+                            <li><a href="./what is bitcoin.html">What is Bitcoin?</a></li>
+                            <li><a href="#">What is Ethereum? </a></li>
+                            <li><a href="./what is blockchain.html">What is blockchain?</a></li>
+                            <li><a href="./How do you buy an NFT.html">How do yoy buy an NFT</a></li>
+                            <li><a href="./How to set up a crypto wallet.html">How to set up a crypto wallet</a></li>
+                            <li><a href="./learn-page.html">Tips & tutorials</a></li>
+                          
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Individuals</h4>
+                        <ul id="footer-ul"> 
+                            <li><a href="./trading page of crypto.html">Buy&sell</a></li>
+                            <li><a href="#">Earn Free crypto</a></li>
+                            <li><a href="#">wallet</a></li>
+                            <li><a href="#">Card</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul id="footer-ul"> 
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="./trading page of crypto.html">Create account</a></li>
+                            <li><a href="#">Id verification</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy;2022 Trading Platform
+            </div>
+        </footer>
+          </head>
+          </html>
+          

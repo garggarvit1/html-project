@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Trading Platform</title>
+    <style>
+         header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 10;
+}
+#border-box{
+
+    margin: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    line-height: 0%;
+    padding-right: 23px;
+        margin-top: 10px;
+}
+nav div{
+    background-color: white;
+    height: 60px;
+    top: 0%;
+    position: fixed;
+}
+
+
+nav{
+    background-color:#dbe0ee;
+    height: 77px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width:100%;
+    top: 0;
+}
+h2.logo{
+    color: rgb(47, 0, 255);
+    font-size: 40px;
+    font-style: bold;
+    line-height: 50px;
+    padding: 0px 75px;
+    font-style: italic;
+    display: inline-block;
+    margin-top: 6px;
+}
+nav ul{
+    float: right;
+    
+}
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+   
+}
+nav ul li a{
+    color:blue;
+    font-size: 17px;
+    padding:7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin: 13px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    background: #82899ec2;
+    transition: .5s;
+    tab-size: 10px;
+    color: white;
+}
+#sign-in-button{
+        position: relative;
+        width: auto;
+        margin: 0px;
+        border-radius: 4px;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        padding: 9px 0px;
+        font-size: 14px;
+        line-height: 14px;
+        border: 1px solid rgb(0, 82, 255);
+        background-color: rgb(0, 82, 255);}
+    }
+    a{text-decoration:none;}
+
+        body{ 
+            font-family: sans-serif;
+        }
+    main{
+        width: 62%;
+        margin-left: 5%;
+        font-size: 25px;
+        line-height: 36px;
+        display:inline-block;
+        font-family: sans-serif;
+        
+        }
+    aside{
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+        position: sticky;
+        top: 20%;
+        line-height: 30px;
+        font-size: 17px;
+    }    
+    ul{
+        padding-left: 3%;
+    }
+    #path-aside-sec{
+        height: auto;
+        width: auto;
+        border: #eef0f3;
+        background-color: #eef0f3;
+        margin-left: 30px;
+       
+    }
+    #path-aside-sec p{
+        margin-left: 9%;
+    }
+    #path-aside-sec p a{
+       text-decoration: none;
+        color: #000000c7;
+        
+    }    
+    #path-aside-sec p a:hover{
+        color: blue;
+    }
+    #social{
+        border: #eef0f3 solid 3px ;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+        margin-left: 30px;
+    }
+    #social a{text-decoration: none;}
+    #facebook img{
+    background-color:#3b5998;
+    height:30px;
+    width:30px;
+    display:inline-block;
+    margin-top: 5px;
+
+    
+}
+#facebook img:hover{
+    background-color:#2d4373;
+}
+#linkedin img{
+    background-color:#ffffff;
+    height:30px;
+    width:30px;
+   margin-top: 5px;
+    display:inline-block;
+}
+#linkedin img:hover{
+    background-color:lightgray;
+}
+#twitter img{
+    background-color:#83c3f3;
+    height:30px;
+    width:30px;
+    margin-top: 5px;
+display:inline-block;
+}
+#twitter img:hover{
+    background-color:#55acee;
+}
+#gmail img{
+    background-color: #dd4b39;
+    height:30px;
+    width:30px;
+    margin-top: 5px;
+   display:inline-block;
+    
+}
+#gmail img:hover{
+    background-color:#c23321;
+    
+}
+     b{font-weight: bolder;}
+     h1{
+         line-height: 53px;
+         margin-top: 100px;
+     }
+main p{background-color: #fcf9f9;}
+#learn-glow{
+    background-color: #82899ec2;
+    color: white;}
+    .footer{
+    background-color: white;
+    padding: 70px;
+}
+.container{
+    max-width:1170px;
+    margin:auto;
+
+}
+#footer-ul{
+    list-style: none;
+}
+#footer-ul li{
+    text-align: left;
+    margin-bottom:10px ;
+}
+#footer-ul li a{
+    color:dimgrey;
+    text-decoration:none ;
+    display: block;
+}
+#footer-ul li a:hover{
+    color: blue;
+    padding-left: 8px;
+}
+.footer-col{
+      width: 25%;
+      padding: 0 70px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-col h4{
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+    margin-left: 30px;
+}
+/* responsive */
+@media(max-width:767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+   
+
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <div></div>
+            <h2 class="logo">Cryptocurrency</h2>
+        
+            <ul id="border-box">
+                <li><a href="./crypto 22.12.2021.html">home</a></li>
+                <li><a href="./tableprice2.html">prices</a></li>
+                <li><a href="#" id="learn-glow">learn</a></li>
+                <li><a href="./NEWS PAGE.html">news</a></li>
+                <li><a href="./trading page of crypto.html">trade</a></li>
+                <li>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li><button id="sign-in-button"><a href="C:\project 1(online trading)\sign in.html" style="color: rgb(255, 255, 255);;">sign in</a></button></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+    <main>
+        <div id="what-is-bc">
+            </div>
+            <h1 >What is a blockchain?</h1>
+            <div><img src="https://blogs.iadb.org/caribbean-dev-trends/wp-content/uploads/sites/34/2017/12/Blockchain1.jpg" alt="" style="width: 100%;"></div>
+            <div><p >Cryptocurrencies like Bitcoin and Ethereum are powered by a technology called the blockchain.&nbsp;<b>At its most basic, a blockchain is a list of transactions that anyone can view and verify. The Bitcoin blockchain, for example, contains a record of every time someone sent or received bitcoin</b>. Cryptocurrencies and the blockchain technology that powers them make it possible to transfer value online without the need for a middleman like a bank or credit card company.</p></div>
+           
+            <div>
+                <ul >
+                    <li><b>Almost all cryptocurrencies, including Bitcoin ,Ethereum and Litecoin, are secured via blockchain networks.</b> Which means their accuracy is constantly being verified by a huge amount of computing power. </li>
+                    <li><b>The list of transactions contained in the blockchain is fundamental for most cryptocurrencies </b>because it enables secure payments to be made between people who don’t know each other without having to go through a third-party verifier like a bank.</li>
+                    <li>Due to the cryptographic nature of these networks, <b>payments via blockchain can be more secure than standard debit/credit card transactions</b>. When making a Bitcoin payment, for instance, you don’t need to provide any sensitive information. That means there is almost zero risk of your financial information being compromised, or your identity being stolen.</li>
+                    <LI>Blockchain technology is also exciting because it has many uses beyond cryptocurrency. <b> are being used to explore medical research,</b> improve the accuracy of healthcare records, streamline supply chains, and so much more.</LI>
+                </ul>
+            </div>
+            
+         
+        <div id="advantages">
+        </div>
+            <h1>What are some advantages of blockchains?</h1>
+            
+            <ul>
+                <li><b>They’re global:</b>which means that cryptocurrencies can be sent across the planet quickly and cheaply. </li>
+               
+                <li><b>They increase privacy:</b>Cryptocurrency payments don’t require you to include your personal information, which protects you from being hacked or having your identity stolen.</li>
+                <div><img src="https://images.ctfassets.net/q5ulk4bp65r7/3FPOf4ixrzn4mcfEiNjPXN/d03c347f7ae58fcec43667f91fccdcf4/2a_crypto-vault.jpg?w=1180&fm=png" alt="" width="100%"></div>
+                <li>
+                   <b>They’re open:</b>Because every single transaction on cryptocurrency networks is published publicly in the form of the blockchain, anyone can scrutinize them. That leaves no room for manipulation of transactions, changing the money supply, or adjusting the rules mid-game. The software that constitutes the core of these currencies is free and open-source so anyone can review the code.
+                </li>
+            </ul>    
+             
+        <div id="How-bc-work">
+            </div>
+            <h1>How does a blockchain work?</h1>
+            <p>Picture a chain you might use for a ship’s anchor. But in this case, every link on the chain is a chunk of information that contains transaction data. At the top of the chain you see what happened today, and as you move down the chain you see older and older transactions. And if you follow it all the way down to the anchor sitting at the bottom of the harbor? You’ll have seen every single transaction in the history of that cryptocurrency. Which gives the blockchain powerful security advantages: it’s an open, transparent record of a cryptocurrency’s entire history. If anyone tries to manipulate a transaction it will cause the link to break, and the entire network will see what happened. That, in a nutshell, is blockchain explained.</p>
+            <ul>
+                <li><b>Another way people often describe the blockchain is that it’s a ledger </b>(sometimes you’ll hear the terms ‘distributed ledger’ or ‘immutable ledger’), that is similar to the balance sheet of a bank. Like a bank’s ledger, the blockchain tracks all the money flowing into, out of, and through the network.</li>
+                <li>But unlike a bank’s books,<b> a crypto blockchain isn’t maintained by any individual or organization, including banks and governments.</b> In fact it isn’t centralized at all. Instead, it is secured by a large peer-to-peer network of computers running open-source software. The network is constantly checking and securing the accuracy of the blockchain.</li>
+                <li><b>Where does new cryptocurrency come from?</b> Every so often – around every ten minutes in the case of Bitcoin – a new chunk of transaction information (or a new block) is added to the chain of existing information. In exchange for contributing their computing power to maintaining the blockchain, the network rewards participants with a small amount of digital currency.</li>
+                <li><b>A crypto blockchain is distributed across the digital currency’s entire network.</b> No company, country, or third party is in control of it; and anyone can participate.</li>
+
+            </ul>
+            <div><embed src="https://www.youtube.com/embed/SSo_EIwHSd4" controlsn width="100%" height="400px"></embed></div>
+         
+        <div id="invention-blockchain">
+            </div>
+            <h1>Who invented the blockchain?</h1>
+            <p>A person or group using the name Satoshi Nakamoto published a whitepaper online explaining the principles behind a new kind of digital money called Bitcoin in late 2008. Every cryptocurrency since is an evolution of the ideas laid out in that paper.</p>
+            <ul>
+                <li>Nakamoto’s goal was to create digital money that would make online transactions between two strangers anywhere in the world possible without requiring a third party like a credit card company or a payment processor like Paypal in the middle.</li>
+                <li>This required a system that would eliminate a thorny issue called the ‘double spending’ problem, where a person might use the same money more than once. The solution is a network that is constantly verifying the movement of Bitcoin. That network is the blockchain.</li>
+                <li>Every Bitcoin transaction is stored and verified by a global network of computers beyond the control of any person, company, or country.</li>
+
+               <li> The database that holds all of that information is called the blockchain.<b> Bitcoins are ‘mined’ </b> that huge, decentralized (also known as peer-to-peer) network of computers, which are also constantly verifying and securing the accuracy of the blockchain. In exchange for contributing their computing power to the blockchain, miners are rewarded with small amounts of cryptocurrency.</li>
+                
+               <li> Every single bitcoin transaction is reflected on the ledger, with new information periodically gathered together in a “block,” which is added to all the blocks that came before.</li>
+                
+                <li><b>The miners’ collective computing power is used to ensure the accuracy of the ever-growing ledger.</b> Bitcoin can’t exist separately from the blockchain; each new bitcoin is recorded on it, as is each subsequent transaction with all existing coins.</li>
+            </ul>
+            <div id="future-blockchain">
+            </div>
+            <h1>What's the future of blockchains?</h1>
+            <p>The blockchain idea has turned out to be a platform that a huge range of applications can be built on top of. It’s still a new and rapidly developing technology, but many experts have described blockchain’s potential to change the way we live and work as being similar to the potential public internet protocols like HTML had in the early days of the World Wide Web.</p>
+            <ul>
+               <li> The Bitcoin Cash and Litecoin blockchains work in a very similar way to the original Bitcoin blockchain. <b>The Ethereum blockchain is a further evolution of the distributed ledger idea,</b> because unlike the Bitcoin blockchain it’s not solely designed to manage a digital money. (That said Ethereum is a cryptocurrency and certainly can be used to send value to another person). Think of the Ethereum blockchain more like a powerful and highly flexible computing platform that allows coders to easily build all kinds of applications leveraging the blockchain.</li>
+
+               <li> For example,<b> imagine a charity that wants to send money to a thousand people every day for a year. With Ethereum, that would only take a few lines of code.</b> Or maybe you’re a video game developer that wants to create items like swords and armor that can be traded outside of the game itself? Ethereum is designed to do that, too.</li>
+            </ul>
+
+    </main>
+    <aside>
+      <div id="path-aside-sec">
+          <P><a href="#what-is-bc">What is a blockchain?</a></P>
+          <p><a href="#advantages">What are some advantages of blockchains?</a></p>
+          <P><a href="#How-bc-work">How does a blockchain work?</a></P>
+          <p><a href="#invention-blockchain">Who invented the blockchain?</a></p>
+          <p><a href="#future-blockchain">What's the future of blockchains?</a></p>
+          
+        </div>
+            <div id="social">
+                <a id="facebook" class="social-btn" target="_blank" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fblog.codingninjas.in%2F2018%2F03%2F13%2Fa-step-by-step-walk-through-of-your-first-html-page%2F">
+                    <img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000014_1549330414_facebook-logo.png" alt="fb">
+                </a>
+    
+                <a id="linkedin" class="social-btn" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&title=Best+Coding+Practices+for+Hassle-free+Programming&url=http%3A%2F%2Fblog.codingninjas.in%2F2018%2F04%2F02%2Fbest-coding-practices-for-hassle-free-programming%2F">
+                    <img class="social-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png" alt="in">
+                </a>
+            
+    
+                <a id="twitter" class="social-btn" target="_blank" href="https://twitter.com/share?url=http%3A%2F%2Fblog.codingninjas.in%2F2018%2F04%2F02%2Fbest-coding-practices-for-hassle-free-programming%2F&text=Best+Coding+Practices+for+Hassle-free+Programming"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000016_1549330452_twitter-logo.png" alt="twi"></a>
+    
+                <a id="gmail" class="social-btn" target="_blank" href="https://plus.google.com/share?url=http%3A%2F%2Fblog.codingninjas.in%2F2018%2F04%2F02%2Fbest-coding-practices-for-hassle-free-programming%2F"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000017_1549330467_google-logo.png" alt="g+"></a>
+    
+               
+            </div>
+      
+    </aside>
+    </div>
+    <div style="background-color: rgb(0, 140, 255); text-align: center; color: white; height:auto;">
+        <h1 style="font-size: 46px;">Buy Bitcoin in just a few minutes</h1>
+    <p style="margin-top:0px;">
+        Start with as little as $25 and pay with your bank account or debit card.
+    </p>
+   <a href="https://www.google.com/search?q=kijuhygtf&rlz=1C1VDKB_enIN971IN971&oq=kijuhygtf&aqs=chrome..69i57j0i10i512l2j0i10i395i512.803j1j15&sourceid=chrome&ie=UTF-8" ><button style="background-color: white;border: none;padding: 10px 20px; font-size: 20px;margin: 32px;border-radius: 20px;">Get started</button></a>
+</div>
+    
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul id="footer-ul"> 
+                    <li><a href="#">About</a></li>
+                    <li><a href="./NEWS PAGE.html">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Legal&privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Learn</h4>
+                <ul id="footer-ul"> 
+                    <li><a href="./what is cryptocurrency(learn).html">What is crypto?</a></li>
+                    <li><a href="./what is bitcoin.html">What is Bitcoin?</a></li>
+                    <li><a href="#">What is Ethereum? </a></li>
+                    <li><a href="./what is blockchain.html">What is blockchain?</a></li>
+                    <li><a href="./How do you buy an NFT.html">How do yoy buy an NFT</a></li>
+                    <li><a href="./How to set up a crypto wallet.html">How to set up a crypto wallet</a></li>
+                    <li><a href="./learn-page.html">Tips & tutorials</a></li>
+                  
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Individuals</h4>
+                <ul id="footer-ul"> 
+                    <li><a href="./trading page of crypto.html">Buy&sell</a></li>
+                    <li><a href="#">Earn Free crypto</a></li>
+                    <li><a href="#">wallet</a></li>
+                    <li><a href="#">Card</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul id="footer-ul"> 
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="./trading page of crypto.html">Create account</a></li>
+                    <li><a href="#">Id verification</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy;2022 Trading Platform
+    </div>
+</footer>
+    
+</body>
+</html>
