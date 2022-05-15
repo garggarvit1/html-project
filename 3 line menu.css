@@ -1,24 +1,26 @@
 .nav div{
     height:4px;
-    background-color:whitesmoke;
+    background-color:black;
     margin:5px;
     border-radius:25px;
-    transition:0.3
+
 }
-.nav{
-    width:30px;
-    display:block;
-    margin:lem 0 0 lem;
-}
+
 .one{
     width:30px;
 }
+.one:hover{
+   background-color:rgb(2, 200, 255);
+}
 .two{
-    width:20px;
+    width:30px;
+}
+.two:hover{
+    background-color:rgb(228, 64, 19);
 }
 .three{
-    width:25px;
-}
-.nav:hover div{
     width:30px;
+}
+.three:hover{
+    background-color:rgb(62, 237, 23);
 }
