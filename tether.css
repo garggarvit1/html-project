@@ -170,11 +170,11 @@ aside{
     width: 25%;
     display: inline-block;
     vertical-align: top;
-    position:fixed;
     top: 20%;
     line-height: 25px;
     font-size: 17px;
     margin-left: 950px;
+    margin-top: -2566px;
 }    
 .diamond-logo{
     padding: 15px 20px;
@@ -283,4 +283,15 @@ aside{
     /* display: flex; */
     width: 20%;
     margin: 50px 40px;
+}
+
+.abc{
+    color:white;
+    text-decoration: none;
+    padding:20px 30px;
+    border-radius:50%;
+}
+
+.abc:hover{
+    background-color:orange;
 }
