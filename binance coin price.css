@@ -171,7 +171,7 @@ aside{
     width: 25%;
     display: inline-block;
     vertical-align: top;
-    position:fixed;
+    margin-top: -2217px;
     top: 20%;
     line-height: 25px;
     font-size: 17px;
@@ -248,40 +248,20 @@ aside{
         margin-bottom: 30px;
     }
 }
-/* @media screen { 
-    main{
-        width: 50%;
-    
-    }
-    .img1{
-        width: 70%;
-        height:70%;
-    }
-    .ethereum-logo{
-        display: inline-block;
-    }
-    h1.heading-ethereum{
-        display: inline-block;
-        font-size: 22px;
-    }
-    .symbol{
-        display: inline-block;
-        font-size: 7px;
-    }
-    aside{
-        width: 45%;
-        display: inline-block;
-        vertical-align: top;
-        position:fixed;
-        top: 10%;
-        line-height: 18px;
-        font-size: 12px;
-        margin-left: 50%;
-    }
-}*/
-/* copyright */
+
 .copyright{
-    /* display: flex; */
+   
     width: 20%;
     margin: 50px 40px;
+}
+#asd{
+    color:white;
+    text-decoration: none;
+    font-family: arial;
+}
+
+#asd:hover{
+    background-color: orange;
+    padding:20px 20px;
+    border-radius: 49%;
 }
